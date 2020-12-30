@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment } from "react";
+import Routes from "./route";
+import GlobalStyles from "./styles/GlobalStyles";
+import { SnackbarProvider } from "notistack";
+import { ApolloProvider } from '@apollo/client';
+import { client } from "./apollo/client";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ApolloProvider client={client}>
+      <SnackbarProvider 
+        maxSnack={3} 
+        anchorOrigin={{
+          vertical:"top",
+          horizontal: "center",
+        }}
+      >
+        <Fragment>
+          <Routes />
+          <GlobalStyles />
+        </Fragment>
+      </SnackbarProvider>
+    </ApolloProvider>
   );
 }
 
