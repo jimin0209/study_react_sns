@@ -10,7 +10,7 @@ const FeedContainer = () => {
     const handleTimer = () => {
         setTimeout(() =>{
             setCount(count + 4);
-
+            setLoading(false);
         }, 1000); //1000이면 1초
     };
 
