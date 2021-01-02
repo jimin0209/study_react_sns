@@ -34,7 +34,7 @@ const Routes = () => {
       data: { isLogin }, 
   } = useQuery(IS_LOGIN);
 
-    return isLogin ? <LoginRoute/> : <LogoutRoute/>
+    return true ? <LoginRoute/> : <LogoutRoute/>
     
 }; //라우트에 여러 페이지를 만들어서 -> App에 임포트시킨다 -> index에서 가상돔에 넣어준다
 
