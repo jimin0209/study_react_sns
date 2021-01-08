@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { Auth, Feed } from "./pages";
+import { Auth, Feed, Test } from "./pages";
 import { gql, useQuery } from "@apollo/client";
 
 const LoginRoute = () => {
@@ -8,6 +8,7 @@ const LoginRoute = () => {
         <BrowserRouter>
             <Switch> 
                 <Route exact path="/" component={Feed} />
+                <Route exact path="/test" component={Test} />
             </Switch>
         </BrowserRouter>
     );
